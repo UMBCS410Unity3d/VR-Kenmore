@@ -25,7 +25,8 @@ public class Escalator : MonoBehaviour
 	{
 		for(int i=0;i<levels.Length;i++)
         {
-			positions.Add(levels[i].transform.position);
+			if (levels[i])
+				positions.Add(levels[i].transform.position);
 		}
 
 		// init levels

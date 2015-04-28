@@ -65,24 +65,4 @@ public class Escalator_Level : MonoBehaviour
 		float distance = (transform.position - next_position).magnitude;
 		speed = distance / interval_time;
 	}
-
-	void OnCollisionEnter(Collision collision) 
-	{
-		Escalators_Object obj = collision.gameObject.GetComponent<Escalators_Object>();
-		if (obj)
-		{
-			if (obj.transform.parent == null)
-				obj.transform.parent = gameObject.transform;
-		}
-	}
-
-	void OnCollisionExit(Collision collision) 
-	{
-		Escalators_Object obj = collision.gameObject.GetComponent<Escalators_Object>();
-		if (obj)
-		{
-			if (obj.transform.parent == gameObject.transform)
-				obj.transform.parent = null;
-		}
-	}
 }
